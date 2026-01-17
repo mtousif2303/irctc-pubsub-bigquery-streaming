@@ -1,4 +1,4 @@
-<img width="3140" height="1652" alt="image" src="https://github.com/user-attachments/assets/22254d37-4ccb-40d5-8585-207f86e06a44" /># IRCTC PubSub to BigQuery Streaming Pipeline
+# IRCTC PubSub to BigQuery Streaming Pipeline
 
 A production-ready, real-time data streaming pipeline that demonstrates end-to-end data engineering on Google Cloud Platform. This project simulates customer data ingestion for IRCTC (Indian Railway Catering and Tourism Corporation), processing millions of records through a scalable, fault-tolerant architecture that transforms raw data into actionable business intelligence.
 
@@ -96,6 +96,8 @@ Whether you're exploring streaming architectures, preparing for cloud certificat
         │  └─────────────────┘  │
         └───────────────────────┘
 
+
+
 The data flow job 
 
 <img width="2972" height="1776" alt="image" src="https://github.com/user-attachments/assets/3effd173-f556-4b0b-8c53-7222deba5f82" />
@@ -115,9 +117,7 @@ c) The buckets where the transaformation logic is kept
 
 4) The BigQuery warehouse where the data is written into table
 
-<img width="3104" height="1744" alt="image" src="https://github.com/user-attachments/assets/2df0be4e-baee-4e3b-9a71-da360ab68a45" />
-
-
+<img width="3140" height="1652" alt="image" src="https://github.com/user-attachments/assets/22254d37-4ccb-40d5-8585-207f86e06a44" />
 
 
 ┌─────────────────────────────────────────────────────────────────────────────┐

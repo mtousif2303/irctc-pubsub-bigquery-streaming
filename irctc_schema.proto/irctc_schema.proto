@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package irctc;
+
+// Protocol Buffer schema for IRCTC stream data
+message IrctcRecord {
+  string row_key = 1;
+  string name = 2;
+  int64 age = 3;
+  string email = 4;
+  
+  // DATE fields in BigQuery map to int32 (days since epoch) or string
+  string join_date = 5;
+  
+  // TIMESTAMP fields map to int64 (microseconds since epoch) or string
+  int64 last_login = 6;
+  
+  int64 loyalty_points = 7;
+  double account_balance = 8;
+  bool is_active = 9;
+  
+  int64 inserted_at = 10;
+  int64 updated_at = 11;
+  
+  string loyalty_status = 12;
+  int64 account_age_days = 13;
+}

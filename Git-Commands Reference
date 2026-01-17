@@ -1,0 +1,402 @@
+# Git Commands Reference
+
+Quick reference for managing this repository.
+
+## 🚀 Initial Setup
+
+### Create Repository on GitHub
+1. Go to https://github.com/new
+2. Repository name: `irctc-pubsub-bigquery-streaming`
+3. Description: "Real-time data streaming pipeline from Pub/Sub to BigQuery using Dataflow"
+4. Choose Public or Private
+5. **DO NOT** initialize with README (we'll push our own)
+6. Click "Create repository"
+
+### Initialize Local Repository
+
+```bash
+# Navigate to your project directory
+cd /path/to/your/Irctc-PubSub-Stream-To-BigQuery-Project
+
+# Initialize git repository
+git init
+
+# Add all files
+git add .
+
+# Initial commit
+git commit -m "Initial commit: IRCTC PubSub to BigQuery streaming pipeline"
+
+# Add remote repository (replace YOUR_USERNAME)
+git remote add origin https://github.com/YOUR_USERNAME/irctc-pubsub-bigquery-streaming.git
+
+# Push to GitHub
+git branch -M main
+git push -u origin main
+```
+
+---
+
+## 📝 Daily Workflow
+
+### Check Status
+```bash
+# See which files have changed
+git status
+
+# See specific changes in files
+git diff
+
+# See changes in staged files
+git diff --staged
+```
+
+### Stage and Commit Changes
+```bash
+# Stage specific files
+git add filename.py
+
+# Stage all changed files
+git add .
+
+# Stage only Python files
+git add *.py
+
+# Commit with message
+git commit -m "Add data transformation logic"
+
+# Commit with detailed message
+git commit -m "Add data transformation logic
+
+- Implement loyalty status enrichment
+- Add account age calculation
+- Handle missing timestamps"
+```
+
+### Push Changes
+```bash
+# Push to main branch
+git push origin main
+
+# Push to specific branch
+git push origin feature-branch-name
+```
+
+---
+
+## 🌿 Branch Management
+
+### Create and Switch Branches
+```bash
+# Create new branch
+git branch feature/add-monitoring
+
+# Switch to branch
+git checkout feature/add-monitoring
+
+# Create and switch in one command
+git checkout -b feature/add-monitoring
+
+# List all branches
+git branch -a
+
+# Delete local branch
+git branch -d feature/add-monitoring
+
+# Force delete unmerged branch
+git branch -D feature/add-monitoring
+```
+
+### Merge Branches
+```bash
+# Switch to main branch
+git checkout main
+
+# Merge feature branch into main
+git merge feature/add-monitoring
+
+# Push merged changes
+git push origin main
+```
+
+---
+
+## 📚 Useful Commands
+
+### View History
+```bash
+# View commit history
+git log
+
+# View compact history
+git log --oneline
+
+# View last 5 commits
+git log -5
+
+# View commits by author
+git log --author="Your Name"
+
+# View changes in specific file
+git log -p filename.py
+```
+
+### Undo Changes
+```bash
+# Discard changes in working directory
+git checkout -- filename.py
+
+# Unstage file (keep changes)
+git reset HEAD filename.py
+
+# Undo last commit (keep changes)
+git reset --soft HEAD~1
+
+# Undo last commit (discard changes) - DANGEROUS!
+git reset --hard HEAD~1
+
+# Revert a specific commit (creates new commit)
+git revert COMMIT_HASH
+```
+
+### Update from Remote
+```bash
+# Fetch changes from remote
+git fetch origin
+
+# Pull and merge changes
+git pull origin main
+
+# Pull with rebase
+git pull --rebase origin main
+```
+
+---
+
+## 🔖 Tagging Releases
+
+```bash
+# Create lightweight tag
+git tag v1.0.0
+
+# Create annotated tag with message
+git tag -a v1.0.0 -m "First stable release"
+
+# Tag specific commit
+git tag -a v1.0.0 COMMIT_HASH -m "Release version 1.0.0"
+
+# Push single tag
+git push origin v1.0.0
+
+# Push all tags
+git push origin --tags
+
+# List tags
+git tag -l
+
+# Delete local tag
+git tag -d v1.0.0
+
+# Delete remote tag
+git push origin --delete v1.0.0
+```
+
+---
+
+## 🔍 Search and Find
+
+```bash
+# Search for text in files
+git grep "function_name"
+
+# Search in specific file types
+git grep "function_name" -- "*.py"
+
+# Show who changed each line
+git blame filename.py
+
+# Find when bug was introduced
+git bisect start
+git bisect bad
+git bisect good COMMIT_HASH
+```
+
+---
+
+## 🤝 Collaboration
+
+### Working with Forks
+```bash
+# Add upstream repository
+git remote add upstream https://github.com/original/repo.git
+
+# Fetch upstream changes
+git fetch upstream
+
+# Merge upstream changes
+git merge upstream/main
+
+# Push to your fork
+git push origin main
+```
+
+### Code Review
+```bash
+# Create pull request branch
+git checkout -b fix/authentication-issue
+
+# Make changes and commit
+git add .
+git commit -m "Fix authentication token expiry"
+
+# Push to remote
+git push origin fix/authentication-issue
+
+# Create PR on GitHub website
+```
+
+---
+
+## 🛠️ Maintenance
+
+### Clean Up
+```bash
+# Remove untracked files (dry run)
+git clean -n
+
+# Remove untracked files
+git clean -f
+
+# Remove untracked directories
+git clean -fd
+
+# Prune remote tracking branches
+git remote prune origin
+
+# Garbage collection
+git gc
+```
+
+### Repository Info
+```bash
+# Show remote repositories
+git remote -v
+
+# Show repository statistics
+git shortlog -sn
+
+# Show repo size
+git count-objects -vH
+```
+
+---
+
+## 📋 Common Commit Message Conventions
+
+```bash
+# Feature
+git commit -m "feat: Add real-time dashboard"
+
+# Bug fix
+git commit -m "fix: Resolve authentication timeout"
+
+# Documentation
+git commit -m "docs: Update setup instructions"
+
+# Refactoring
+git commit -m "refactor: Simplify data transformation logic"
+
+# Performance
+git commit -m "perf: Optimize BigQuery query performance"
+
+# Tests
+git commit -m "test: Add unit tests for data validation"
+
+# Configuration
+git commit -m "chore: Update dependencies"
+
+# Style changes
+git commit -m "style: Format code with black"
+```
+
+---
+
+## 🚨 Emergency Commands
+
+### Accidentally Committed Sensitive Data
+```bash
+# Remove file from last commit
+git rm --cached sensitive-file.json
+git commit --amend -m "Remove sensitive file"
+git push --force origin main
+
+# Remove from entire history (DANGEROUS!)
+git filter-branch --tree-filter 'rm -f path/to/sensitive-file.json' HEAD
+git push --force origin main
+
+# Better alternative: use BFG Repo-Cleaner
+# Download from https://rtyley.github.io/bfg-repo-cleaner/
+java -jar bfg.jar --delete-files sensitive-file.json
+git reflog expire --expire=now --all
+git gc --prune=now --aggressive
+```
+
+### Recover Deleted Branch
+```bash
+# Find commit hash of deleted branch
+git reflog
+
+# Create new branch from that commit
+git checkout -b recovered-branch COMMIT_HASH
+```
+
+---
+
+## 💡 Pro Tips
+
+1. **Write meaningful commit messages** - Your future self will thank you
+2. **Commit often** - Small, focused commits are easier to review and revert
+3. **Use branches** - Keep main branch stable
+4. **Pull before push** - Avoid conflicts
+5. **Never commit credentials** - Use .gitignore
+6. **Review changes before committing** - Use `git diff`
+7. **Use .gitignore from the start** - Prevent accidental commits
+
+---
+
+## 📚 Git Aliases (Optional)
+
+Add to `~/.gitconfig`:
+
+```ini
+[alias]
+    st = status
+    co = checkout
+    br = branch
+    ci = commit
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    visual = log --graph --oneline --all
+    amend = commit --amend --no-edit
+```
+
+Usage:
+```bash
+git st          # instead of git status
+git co main     # instead of git checkout main
+git visual      # beautiful commit graph
+```
+
+---
+
+## 🆘 Getting Help
+
+```bash
+# Get help for any command
+git help <command>
+git <command> --help
+
+# Examples
+git help commit
+git push --help
+``` 

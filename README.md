@@ -96,6 +96,28 @@ Whether you're exploring streaming architectures, preparing for cloud certificat
         │  └─────────────────┘  │
         └───────────────────────┘
 
+The data flow job 
+
+<img width="2972" height="1776" alt="image" src="https://github.com/user-attachments/assets/3effd173-f556-4b0b-8c53-7222deba5f82" />
+
+
+a) The Data geerating and publihing in topic
+
+<img width="2870" height="1766" alt="image" src="https://github.com/user-attachments/assets/1ff8f491-ce47-4a9b-9627-61c9be6f89a2" />
+
+b) The Tpoic where data is published
+
+<img width="3110" height="1772" alt="image" src="https://github.com/user-attachments/assets/d6a5eaa9-6816-40bf-adae-7e2b17040ae5" />
+
+c) The buckets where the transaformation logic is kept
+
+<img width="3116" height="1648" alt="image" src="https://github.com/user-attachments/assets/026f88c6-ba9e-4229-8470-3d5358200082" />
+
+4) The BigQuery warehouse where the data is written into table
+
+![Uploading image.png…]()
+
+
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                          MONITORING & OBSERVABILITY                          │
 ├─────────────────────────────────────────────────────────────────────────────┤

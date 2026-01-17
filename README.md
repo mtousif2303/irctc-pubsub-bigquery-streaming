@@ -97,7 +97,19 @@ Whether you're exploring streaming architectures, preparing for cloud certificat
         └───────────────────────┘
 
 
-
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                          MONITORING & OBSERVABILITY                          │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                               │
+│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐                 │
+│  │Cloud Logging │    │Cloud Monitor │    │  Dashboard   │                 │
+│  │• Error Logs  │    │• Pub/Sub     │    │• Throughput  │                 │
+│  │• Debug Info  │    │• Dataflow    │    │• Latency     │                 │
+│  │• Audit Trail │    │• BigQuery    │    │• Errors      │                 │
+│  └──────────────┘    └──────────────┘    └──────────────┘                 │
+│                                                                               │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
 The data flow job 
 
 <img width="2972" height="1776" alt="image" src="https://github.com/user-attachments/assets/3effd173-f556-4b0b-8c53-7222deba5f82" />
@@ -118,21 +130,6 @@ c) The buckets where the transaformation logic is kept
 4) The BigQuery warehouse where the data is written into table
 
 <img width="3140" height="1652" alt="image" src="https://github.com/user-attachments/assets/22254d37-4ccb-40d5-8585-207f86e06a44" />
-
-
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                          MONITORING & OBSERVABILITY                          │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                               │
-│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐                 │
-│  │Cloud Logging │    │Cloud Monitor │    │  Dashboard   │                 │
-│  │• Error Logs  │    │• Pub/Sub     │    │• Throughput  │                 │
-│  │• Debug Info  │    │• Dataflow    │    │• Latency     │                 │
-│  │• Audit Trail │    │• BigQuery    │    │• Errors      │                 │
-│  └──────────────┘    └──────────────┘    └──────────────┘                 │
-│                                                                               │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
 
 ### Detailed Component Flow
 
